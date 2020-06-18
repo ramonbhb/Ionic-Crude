@@ -14,6 +14,33 @@
       <ion-card-content>
         <ion-text>{{ contatoKey.contato.telefone }} - {{ contatoKey.contato.dtnasc | date: 'dd/MM/yyyy' }}</ion-text>
       </ion-card-content>
+
+      <ion-row text-center>
+        <ion-col>
+          <ion-button (click)="editarContato(contatoKey)">
+            <ion-icon name="create">
+
+            </ion-icon>
+            <ion-text>Editar</ion-text>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="removerContato(contatoKey)">            
+            <ion-icon name="trash">
+              
+            </ion-icon>
+            <ion-text>Excluir</ion-text>
+          </ion-button>
+        </ion-col>
+        <ion-col>     
+          <a href="tel:{{ contatoKey.contato.telefone }}">
+          <ion-button>            
+            <ion-icon name="call"> </ion-icon>
+            <ion-text>Ligar</ion-text>
+          </ion-button>           
+          </a>
+        </ion-col>
+      </ion-row>
     </ion-card>  
 
     <ion-row *ngIf="contatos.length == 0">
